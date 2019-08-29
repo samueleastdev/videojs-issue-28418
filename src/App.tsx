@@ -3,6 +3,8 @@ import videojs from 'video.js';
 
 import 'video.js/dist/video-js.css';
 
+import 'videojs-frames';
+
 class App extends React.Component {
   private player?: videojs.Player;
   private videoNode?: HTMLVideoElement;
@@ -23,8 +25,10 @@ class App extends React.Component {
         },
       ],
     }).ready(function onReady() {
-      // console.log('onPlayerReady', this);
-    });
+      console.log('onPlayerReady', this);
+      
+    }); 
+    this.player.frames();
   }
 
   // destroy player on unmount
